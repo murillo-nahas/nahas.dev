@@ -27,8 +27,8 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-color-700 mt-24 mb-8 w-full border- flex flex-col items-center justify-center">
-      <div className="w-2/6 mt-8">
+    <footer className="border-t border-color-700 mt-16 w-full flex flex-col items-center justify-center">
+      <div className="w-2/6 mt-4 mb-4">
         <span className="text-sm text-stone-700">© 2024 Murillo Nahás</span>
         <ul role="list" className="mt-4 flex items-center gap-x-2">
           {socials.map(({ name, url, icon }, i) => (
@@ -37,7 +37,7 @@ export function Footer() {
                 target="_blank"
                 title={name}
                 href={url}
-                className="grid aspect-square ml-2 place-items-center cursor-pointertext-slate-600"
+                className="grid aspect-square ml-2 place-items-center cursor-pointer text-slate-600"
               >
                 {icon}
               </a>
