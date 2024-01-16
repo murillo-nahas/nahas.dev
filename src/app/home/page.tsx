@@ -7,7 +7,7 @@ import { Writing } from "../components/layout/Writing";
 export function Home() {
   return (
     <>
-      <main className="w-2/6 m-auto">
+      <main className="w-2/6 m-auto h-auto">
         <Header />
         <About />
         <Work />
