@@ -1,6 +1,6 @@
 const work = [
   {
-    position: "Software Engineer",
+    position: "Mid-Level Software Engineer",
     company: "InLive Consultoria",
     href: "https://www.inlive.com.br/",
     startDate: "2023",
