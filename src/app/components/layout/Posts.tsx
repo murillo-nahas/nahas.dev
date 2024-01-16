@@ -7,13 +7,18 @@ const posts = [
     numberOfViews: 0,
   },
   {
-    title: "My tech plans for 2024",
-    date: "January 20, 2024",
+    title: "Creating a in-memory server with Koa.js",
+    date: "November 21, 2023",
     numberOfViews: 0,
   },
   {
-    title: "My tech plans for 2024",
-    date: "January 20, 2024",
+    title: "A Dive into Interfaces vs Types in TypeScript",
+    date: "Jul 10, 2023",
+    numberOfViews: 0,
+  },
+  {
+    title: "A Little about TypeScript Utility Types",
+    date: "Jul 10, 2023",
     numberOfViews: 0,
   },
 ];

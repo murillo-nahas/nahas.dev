@@ -8,13 +8,26 @@ const posts = [
     numberOfViews: 0,
     href: "/blog",
   },
+  {
+    title: "Creating a in-memory server with Koa.js",
+    date: "November 21, 2023",
+    numberOfViews: 0,
+    href: "/blog",
+  },
+  {
+    title: "A Dive into Interfaces vs Types in TypeScript",
+    date: "Jul 10, 2023",
+    numberOfViews: 0,
+    href: "/blog",
+  },
 ];
 
 export function Writing() {
   return (
     <section className="mt-20">
       <h2 className="font-medium text-gray-950">Writing</h2>
-      <div className="mt-6">
+      <p className="text-sm font-light text-gray-500">The last three posts</p>
+      <div>
         {posts.map(({ title, date, numberOfViews, href }, index) => (
           <Article
             href={href}
