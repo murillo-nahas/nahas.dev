@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./index.css";
 
-const inter = Sora({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Murillo Nahas, Software Engineer",
