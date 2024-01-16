@@ -6,12 +6,14 @@ import { Writing } from "../components/layout/Writing";
 
 export function Home() {
   return (
-    <main className="border-gray-600">
-      <Header />
-      <About />
-      <Work />
-      <Writing />
+    <>
+      <main className="w-2/6 m-auto">
+        <Header />
+        <About />
+        <Work />
+        <Writing />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
