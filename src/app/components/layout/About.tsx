@@ -3,8 +3,9 @@ export function About() {
     <section className="mt-24">
       <h2 className="font-medium text-gray-950">About</h2>
       <p className="mt-4 text-stone-700 leading-7">
-        I am a full-stack software engineer from Brazil, deeply enthusiastic
-        about the TypeScript ecosystem (JavaScript, React, Node.js, etc.).
+        Hi, I am Murillo Nahás! 👋 <br /> I am a full-stack software engineer
+        from Brazil, deeply enthusiastic about the TypeScript ecosystem
+        (JavaScript, React, Node.js, etc.).
       </p>
       <p className="mt-4 text-stone-700 leading-7">
         Currently, I am working as a software engineer at InLive, previously
@@ -17,7 +18,7 @@ export function About() {
           href="https://www.nike.com.br/sc/corrida-app-nike-run-club"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-950 decoration-gray-500 font-medium underline decoration-solid hover:decoration-gray-500"
+          className="text-gray-950 decoration-gray-400 font-medium underline decoration-solid hover:decoration-gray-500"
         >
           runner and fitness enthusiast,
         </a>{" "}
