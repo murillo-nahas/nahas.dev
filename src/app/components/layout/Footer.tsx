@@ -1,44 +1,51 @@
-import GitHubIcon from "/public/icons/github.svg";
-import ResumeIcon from "/public/icons/resume.svg";
-import XIcon from "/public/icons/x.svg";
-import Image from "next/image";
+import { BsTwitterX } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+import { CiChat2 } from "react-icons/ci";
 
 const socials = [
   {
     name: "GitHub",
-    url: "/github",
-    icon: GitHubIcon,
+    url: "https://github.com/murillo-nahas",
+    icon: <BsGithub className="w-6 h-6 text-slate-600 hover:text-slate-400" />,
   },
   {
     name: "X",
-    url: "/x",
-    icon: XIcon,
+    url: "https://twitter.com/murillonahvs",
+    icon: (
+      <BsTwitterX className="w-6 h-6 text-slate-600 hover:text-slate-400" />
+    ),
   },
   {
-    name: "Read.CV",
-    url: "/cv",
-    icon: ResumeIcon,
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/murillo-nahas/",
+    icon: (
+      <BsLinkedin className="w-6 h-6 text-slate-600 hover:text-slate-400" />
+    ),
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="mt-24 mb-8">
-      <span>© 2024 Murillo Nahás</span>
-      <ul role="list" className="mt-6 flex items-center gap-x-2">
-        {socials.map(({ name, url, icon }, i) => (
-          <li key={i}>
-            <a
-              target="_blank"
-              title={name}
-              href={url}
-              className="grid aspect-square w-8 place-items-center cursor-pointer "
-            >
-              <Image src={icon} alt="Social Icon" width="25" height="25" />
-            </a>
-          </li>
-        ))}
-      </ul>
+    <footer className="border-t border-color-700 mt-24 mb-8 w-full border- flex flex-col items-center justify-center">
+      <div className="w-2/6 mt-8">
+        <span className="text-sm text-stone-700">© 2024 Murillo Nahás</span>
+        <ul role="list" className="mt-4 flex items-center gap-x-2">
+          {socials.map(({ name, url, icon }, i) => (
+            <li key={i}>
+              <a
+                target="_blank"
+                title={name}
+                href={url}
+                className="grid aspect-square ml-2 place-items-center cursor-pointertext-slate-600"
+              >
+                {icon}
+              </a>
+            </li>
+          ))}
+          <CiChat2 className="text-slate-600 hover:text-slate-400 ml-2 cursor-pointer w-8 h-8" />
+        </ul>
+      </div>
     </footer>
   );
 }
