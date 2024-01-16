@@ -1,7 +1,7 @@
 export function Writing() {
   return (
     <section>
-      <p>Writing</p>
+      <p></p>
     </section>
   );
 }
