@@ -9,7 +9,7 @@ interface ArticleProps {
 
 export function Article({ title, date, numberOfViews, href }: ArticleProps) {
   return (
-    <section className="mt-12">
+    <section className="mt-8">
       <Link
         href={href}
         className="text-gray-950 decoration-gray-400 font-normal underline decoration-solid hover:decoration-gray-500"
