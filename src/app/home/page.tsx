@@ -4,7 +4,7 @@ import { Header } from "../components/layout/Header";
 import { Work } from "../components/layout/Work";
 import { Writing } from "../components/layout/Writing";
 
-export function Home() {
+function Home() {
   return (
     <>
       <main className="w-2/6 m-auto h-auto">
@@ -17,3 +17,5 @@ export function Home() {
     </>
   );
 }
+
+export default Home;

@@ -2,7 +2,7 @@ import { Return } from "../components/elements/Return";
 import { Footer } from "../components/layout/Footer";
 import { Posts } from "../components/layout/Posts";
 
-export default function Blog() {
+function Blog() {
   return (
     <>
       <main className="w-2/6 m-auto h-auto">
@@ -13,3 +13,5 @@ export default function Blog() {
     </>
   );
 }
+
+export default Blog;
