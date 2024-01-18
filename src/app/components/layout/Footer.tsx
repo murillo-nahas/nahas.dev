@@ -1,7 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import { BsTwitterX } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { CiChat2 } from "react-icons/ci";
+import { Contact } from "./Contact/Contact";
 
 const socials = [
   {
@@ -26,6 +30,16 @@ const socials = [
 ];
 
 export function Footer() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  function handleOpenModal() {
+    setModalOpen(true);
+  }
+
+  function handleCloseModal() {
+    setModalOpen(false);
+  }
+
   return (
     <footer className="border-t border-color-700 mt-16 w-full flex flex-col items-center justify-center">
       <div className="w-2/6 mt-4 mb-4">
@@ -43,7 +57,11 @@ export function Footer() {
               </a>
             </li>
           ))}
-          <CiChat2 className="text-slate-600 hover:text-slate-400 ml-2 cursor-pointer w-8 h-8" />
+          <CiChat2
+            onClick={handleOpenModal}
+            className="text-slate-600 hover:text-slate-400 ml-2 cursor-pointer w-8 h-8"
+          />
+          <Contact isOpen={isModalOpen} closeModal={handleCloseModal} />
         </ul>
       </div>
     </footer>
