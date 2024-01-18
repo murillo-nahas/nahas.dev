@@ -7,6 +7,9 @@ This project was made with the following stack:
 
 - [x] Next.js
 - [x] TailwindCSS
+- [x] ReactIcons
+- [x] Emailjs
+- [x] Next.js Mdx
 
 First, run the development server:
 
