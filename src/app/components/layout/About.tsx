@@ -3,13 +3,12 @@ export function About() {
     <section className="mt-24">
       <h2 className="font-medium text-gray-950">About</h2>
       <p className="mt-4 text-stone-700 leading-7">
-        Hi, I am Murillo Nahás! 👋 <br /> I am a full-stack software engineer
-        from Brazil, deeply enthusiastic about the TypeScript ecosystem
+        Hi, I am Murillo Nahás, a Software Engineer from Brazil, 
+        deeply enthusiastic about the TypeScript ecosystem
         (JavaScript, React, Node.js, etc.).
       </p>
       <p className="mt-4 text-stone-700 leading-7">
-        Currently, I am working as a software engineer at InLive, previously
-        Bradesco Seguros. I entered the software development field in 2021,
+        Currently, I am working as a software engineer at Bradesco Seguros. I entered the software development field in 2021,
         where I began my journey into web development.
       </p>
       <p className="mt-4 text-stone-700 leading-7">

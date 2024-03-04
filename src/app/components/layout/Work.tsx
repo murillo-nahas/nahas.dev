@@ -1,24 +1,10 @@
 const work = [
   {
-    position: "Mid-Level Software Engineer",
-    company: "InLive Consultoria",
-    href: "https://www.inlive.com.br/",
-    startDate: "2023",
-    endDate: null,
-  },
-  {
     position: "Software Engineer",
     company: "Bradesco Seguros",
     href: "https://www.bradescoseguros.com.br/clientes",
     startDate: "2023",
-    endDate: "2024",
-  },
-  {
-    position: "Software Engineer",
-    company: "Zella Sistemas",
-    href: "https://zellasistemas.com.br/",
-    startDate: "2021",
-    endDate: "2022",
+    endDate: null,
   },
 ];
 
@@ -45,7 +31,7 @@ export function Work() {
             </p>
             <div className="h-px grow bg-gray-800/80 flex" />
             <p className="text-sm tabular-nums text-gray-500">
-              {startDate}&ndash;{endDate ?? "Now"}
+              {startDate} &ndash; {endDate ?? "Now"}
             </p>
           </li>
         ))}
