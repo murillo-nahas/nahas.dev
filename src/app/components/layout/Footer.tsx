@@ -44,7 +44,7 @@ export function Footer() {
               <a
                 href={el.url}
                 onClick={handleOpenModal}
-                className="underline text-textGrayDefault hover:text-textGrayDefaultHover"
+                className="underline text-sm text-textGrayDefault hover:text-textGrayDefaultHover"
               >
                 {el.name}
               </a>
@@ -52,13 +52,15 @@ export function Footer() {
               <a
                 href={el.url}
                 target="_blank"
-                className="underline text-textGrayDefault hover:text-textGrayDefaultHover"
+                className="underline text-sm text-textGrayDefault hover:text-textGrayDefaultHover"
               >
                 {el.name}
               </a>
             )}
 
-            {index !== socials.length - 1 && <span>&nbsp;·&nbsp;</span>}
+            {index !== socials.length - 1 && (
+              <span className="text-textGray">&nbsp;·&nbsp;</span>
+            )}
           </React.Fragment>
         ))}
       </nav>
