@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Writing() {
   return (
     <>
-      <main className="w-3/6 m-auto h-auto">
+      <main className="w-2/6 m-auto h-auto">
         <p className="mt-32 font-medium text-textGray">Writing</p>
         <p className="mt-4 text-sm text-textGrayDefault">
           This is where my ideas come to life
