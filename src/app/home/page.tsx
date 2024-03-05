@@ -35,16 +35,16 @@ export default function Home() {
 
   return (
     <>
-      <main className="w-3/6 m-auto h-auto">
+      <main className="w-2/6  m-auto h-auto">
         <Header />
 
-        <p className="mt-16 text-textGrayDefault">
+        <p className="mt-16 text-sm text-textGrayDefault">
           I&apos;m a full-stack developer specializing in React.js/Next,
           TypeScript, and their ecosystem. Enthusiastic about crafting content
           and disseminating knowledge on the internet.
         </p>
 
-        <p className="mt-8 text-textGrayDefault">
+        <p className="mt-8 text-sm text-textGrayDefault">
           You can read more about me on&nbsp;
           <Link
             href={"/about"}
@@ -60,18 +60,18 @@ export default function Home() {
             <React.Fragment key={el.name}>
               <Link
                 href={el.url}
-                className="text-textGrayDefault hover:text-textGrayDefaultHover underline hover:decoration-wavy"
+                className="text-textGrayDefault text-sm hover:text-textGrayDefaultHover underline hover:decoration-wavy"
               >
                 {el.name}
               </Link>
               {index !== pagesNavigation.length - 1 && (
-                <span>&nbsp;·&nbsp;</span>
+                <span className="text-textGray">&nbsp;·&nbsp;</span>
               )}
             </React.Fragment>
           ))}
         </nav>
 
-        <p className="mt-8 text-textGrayDefault">
+        <p className="mt-8 text-sm text-textGrayDefault">
           Feel free to mail me by&nbsp;
           <span
             onClick={handleOpenModal}
