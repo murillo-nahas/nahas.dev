@@ -6,7 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Murillo Nahás",
-  description: "Murillo Nahas's Blog",
+  description: `
+   I'm a full-stack developer specializing in React.js/Next, TypeScript, and their ecosystem. Enthusiastic about crafting content and disseminating knowledge on the internet.`,
 };
 
 export default function RootLayout({
