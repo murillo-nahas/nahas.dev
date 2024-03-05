@@ -1,4 +1,4 @@
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 
 interface ReturnProps {
   label: string;
@@ -10,7 +10,7 @@ export function Return({ label, href }: ReturnProps) {
     <div className="mt-24">
       <Link
         href={href}
-        className="font-light text-gray-500 hover:text-gray-700"
+        className="font-medium text-sm text-textGrayDefault hover:text-textGrayDefaultHover"
       >
         ← {label}
       </Link>
