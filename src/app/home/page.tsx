@@ -39,9 +39,9 @@ export default function Home() {
         <Header />
 
         <p className="mt-16 text-textGrayDefault">
-          I am a Software Engineer from Brazil, creating awesome projects and
-          sharing knowledge over the internet. Focused mostly of the time on web
-          development, I love to see things being created from scratch.{" "}
+          I&apos;m a full-stack developer specializing in React.js/Next,
+          TypeScript, and their ecosystem. Enthusiastic about crafting content
+          and disseminating knowledge on the internet.
         </p>
 
         <p className="mt-8 text-textGrayDefault">
@@ -60,7 +60,7 @@ export default function Home() {
             <React.Fragment key={el.name}>
               <Link
                 href={el.url}
-                className="text-textGrayDefault hover:text-textGrayDefaultHover hover:underline"
+                className="text-textGrayDefault hover:text-textGrayDefaultHover underline hover:decoration-wavy"
               >
                 {el.name}
               </Link>
