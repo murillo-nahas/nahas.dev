@@ -1,3 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
 
-@import "tailwindcss";
+* {
+  font-family: 'Geist', sans-serif;
+}
+
+body {
+  background-color: var(--color-black-primary);
+}
+
+@theme {
+  --color-black-primary: #0a0a0a;
+  --color-black-secondary: #222222;
+
+  --color-white-primary: #fafafa;
+
+  --color-gray-primary: #a3a3a3;
+}
