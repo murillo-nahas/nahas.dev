@@ -1,11 +1,12 @@
 <div class="h-16 flex items-center justify-between text-white-primary">
   <div class="flex items-center gap-8">
     @for (link of links; track link.href) {
-      <a
-        [href]="link.href"
-        class="text-gray-primary text-sm hover:text-white-primary transition-colors duration-300"
-        >{{ link.label }}</a
+      <p
+        [routerLink]="link.href"
+        class="cursor-pointer text-gray-primary text-sm hover:text-white-primary transition-colors duration-300"
       >
+        {{ link.label }}
+      </p>
     }
   </div>
 

@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Moon, Sun } from 'lucide-angular';
 
 @Component({
   selector: 'app-header',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, RouterLink],
   standalone: true,
   templateUrl: './header.html',
 })
