@@ -18,7 +18,12 @@
     @for (experience of experience; track experience.title; let first = $first) {
       <div class="flex flex-col gap-2" [class.mt-6]="first" [class.mt-10]="!first">
         <p class="text-sm text-white-primary">{{ experience.title }}</p>
-        <p class="text-gray-primary text-xs">{{ experience.company }}, {{ experience.date }}</p>
+        <p class="text-gray-primary text-xs">
+          <a [href]="experience.companyLink" target="_blank" class="underline cursor-pointer">{{
+            experience.company
+          }}</a
+          >, {{ experience.date }}
+        </p>
         <p class="mt-2 text-gray-primary text-xs">{{ experience.description }}</p>
       </div>
     }
@@ -36,6 +41,17 @@
           →
         </span>
       </p>
+    </div>
+
+    <div class="mt-8 flex flex-col gap-6">
+      @for (project of projects; track project.name) {
+        <app-project-card
+          [name]="project.name"
+          [description]="project.description"
+          [link]="project.link"
+          [techs]="project.techs"
+        ></app-project-card>
+      }
     </div>
   </section>
 

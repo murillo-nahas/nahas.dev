@@ -1,39 +1,65 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Connect } from '../../shared/components/connect/connect';
+import { ProjectCard } from './components/project-card/project-card';
 
 type Experience = {
   title: string;
   company: string;
+  companyLink: string;
   date: string;
   description: string;
 };
 
+type Project = {
+  name: string;
+  description: string;
+  link: string;
+  techs: string[];
+};
+
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, Connect],
+  imports: [RouterLink, Connect, ProjectCard],
   templateUrl: './home.html',
 })
 export class Home {
-
   readonly experience: Experience[] = [
     {
       title: 'Full-Stack Software Engineer',
       company: 'Merch',
+      companyLink: 'https://merch.co',
       date: '2024 · Present',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+      description: 'At Merch, I build and maintain a large-scale merchandising platform using Angular and NestJS within an NX monorepo. I work across the stack to deliver production features end to end, redesign shared frontend modules to improve UX and maintainability, and architect backend services, background jobs, and AWS Lambda functions. My work also involves contributing to AWS-based cloud and serverless infrastructure, with a strong focus on scalability, clean architecture, and long-term maintainability.',
     },
     {
       title: 'Mobile Software Engineer',
       company: 'Be220',
+      companyLink: 'https://be220.com',
       date: '2024 · 2025',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+      description: 'At Be220, I built and delivered cross-platform mobile applications using Ionic, TailwindCSS, and Firebase, leading two production apps from zero to launch: Ineide, a location-based marketplace, and Previsc, a retirement planning app integrated with a .NET API. I owned the full mobile development lifecycle — from architecture and UI to backend integration and app store releases — and led internal workshops on payment gateway integrations such as Asaas and Pagar.me.',
     },
     {
       title: 'Mobile Software Engineer',
       company: 'Bradesco Seguros',
+      companyLink: 'https://www.bradescoseguros.com.br/',
       date: '2022 · 2024',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+      description: 'At Bradesco Seguros, I led the development of the Capitalização section of a high-traffic mobile app using Ionic and built a Backend for Frontend (BFF) to support mobile feature delivery. I refactored the BFF from Node.js and Express to NestJS with Zod validation, improving maintainability and type safety, while delivering new features, performance improvements, and analytics tracking across the Bradesco Seguros and Bradesco Bank mobile apps.',
+    },
+  ];
+
+  readonly projects: Project[] = [
+    {
+      name: 'Jobtrackr frontend',
+      description: 'Frontend infrastructure for Jobtrackr, a job tracking tool.',
+      link: 'https://github.com/murillo-nahas/jobtrackr-frontend',
+      techs: ['React', 'TypeScript', 'Shadcn UI', 'Tanstack Query', 'TailwindCSS', 'Zod'],
+    },
+    {
+      name: 'Jobtrackr backend',
+      description: 'Backend infrastructure for Jobtrackr, a job tracking tool.',
+      link: 'https://github.com/murillo-nahas/jobtrackr-backend',
+      techs: ['NestJS', 'TypeScript', 'PostgreSQL', 'Prisma', 'Docker'],
     },
   ];
 }
