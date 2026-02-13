@@ -3,6 +3,8 @@
     @for (link of links; track link.href) {
       <p
         [routerLink]="link.href"
+        routerLinkActive="text-white-primary"
+        [routerLinkActiveOptions]="{ exact: true }"
         class="cursor-pointer text-gray-primary text-sm hover:text-white-primary transition-colors duration-300"
       >
         {{ link.label }}
