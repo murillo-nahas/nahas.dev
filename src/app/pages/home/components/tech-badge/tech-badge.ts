@@ -1,0 +1,8 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-tech-badge',
+  imports: [],
+  templateUrl: './tech-badge.html',
+})
+export class TechBadge { }
