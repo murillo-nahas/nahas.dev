@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { LucideAngularModule } from 'lucide-angular';
+import { Connect } from '../../shared/components/connect/connect';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [LucideAngularModule, Connect],
   templateUrl: './about.html',
 })
-export class About { }
+export class About {
+}
