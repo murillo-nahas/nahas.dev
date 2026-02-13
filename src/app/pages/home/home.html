@@ -1,4 +1,54 @@
 <div class="w-full flex justify-center flex-col items-center">
-  <p class="text-white-primary text-2xl">Home</p>
-  <p class="mt-4 text-gray-primary text-sm">Coming soon</p>
+  <section class="w-full pb-8 border-b border-solid border-black-secondary">
+    <p class="text-white-primary text-3xl">Murillo Nahas 🖐️</p>
+    <p class="mt-4 text-gray-primary">
+      Full Stack Software Engineer at
+      <a
+        href="https://merch.co"
+        target="_blank"
+        class="text-white-primary hover:text-gray-primary underline transition-colors duration-300 cursor-pointer"
+        >Merch</a
+      >
+    </p>
+  </section>
+
+  <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
+    <p class="text-white-primary text-2xl">Experience</p>
+
+    @for (experience of experience; track experience.title; let first = $first) {
+      <div class="flex flex-col gap-2" [class.mt-6]="first" [class.mt-10]="!first">
+        <p class="text-sm text-white-primary">{{ experience.title }}</p>
+        <p class="text-gray-primary text-xs">{{ experience.company }}, {{ experience.date }}</p>
+        <p class="mt-2 text-gray-primary text-xs">{{ experience.description }}</p>
+      </div>
+    }
+  </section>
+
+  <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
+    <div class="flex justify-between items-center">
+      <p class="text-white-primary text-2xl">Projects</p>
+      <p
+        class="group text-gray-primary text-xs hover:text-white-primary transition-colors duration-300 cursor-pointer"
+        routerLink="/projects"
+      >
+        View all
+        <span class="inline-block transition-transform duration-300 group-hover:translate-x-[2px]">
+          →
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
+    <p class="text-white-primary text-2xl">Education</p>
+
+    <div class="mt-6 flex flex-col gap-2">
+      <p class="text-sm text-white-primary">Bachelor of Systems Analysis and Development</p>
+      <p class="text-gray-primary text-xs">Faculdade Estácio, 2025 · 2027</p>
+    </div>
+  </section>
+
+  <section class="w-full">
+    <app-connect />
+  </section>
 </div>
