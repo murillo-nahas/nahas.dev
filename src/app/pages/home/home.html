@@ -15,7 +15,7 @@
   <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
     <p class="text-white-primary text-2xl">Experience</p>
 
-    @for (experience of experience; track experience.title; let first = $first) {
+    @for (experience of experiences; track experience.title; let first = $first) {
       <div class="flex flex-col gap-2" [class.mt-6]="first" [class.mt-10]="!first">
         <p class="text-sm text-white-primary">{{ experience.title }}</p>
         <p class="text-gray-primary text-xs">
