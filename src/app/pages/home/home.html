@@ -19,9 +19,11 @@
       <div class="flex flex-col gap-2" [class.mt-6]="first" [class.mt-10]="!first">
         <p class="text-sm text-white-primary">{{ experience.title }}</p>
         <p class="text-gray-primary text-xs">
-          <a [href]="experience.companyLink" target="_blank" class="underline cursor-pointer">{{
-            experience.company
-          }}</a
+          <a
+            [href]="experience.companyLink"
+            target="_blank"
+            class="text-gray-primary hover:text-white-primary underline cursor-pointer"
+            >{{ experience.company }}</a
           >, {{ experience.date }}
         </p>
         <p class="mt-2 text-gray-primary text-xs">{{ experience.description }}</p>
