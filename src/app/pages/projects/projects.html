@@ -1,4 +1,24 @@
 <div class="w-full flex justify-center flex-col items-center">
-  <p class="text-white-primary text-2xl">Projects</p>
-  <p class="mt-4 text-gray-primary text-sm">Coming soon</p>
+  <section class="w-full pb-8">
+    <p class="text-white-primary text-2xl">Projects</p>
+    <p class="mt-4 text-gray-primary text-sm">What I've been building lately</p>
+  </section>
+
+  <section class="w-full">
+    <app-navigation-bar (filterChange)="onFilterChange($event)" />
+
+    <div class="mt-8 flex flex-col gap-6">
+      @for (project of filteredProjects(); track project.name; let last = $last) {
+        <div [class.border-b]="!last" [class.pb-6]="!last" class="border-solid border-black-secondary">
+          <app-project-card
+            [name]="project.name"
+            [description]="project.description"
+            [date]="project.date"
+            [link]="project.link"
+            [techs]="project.techs"
+          />
+        </div>
+      }
+    </div>
+  </section>
 </div>
