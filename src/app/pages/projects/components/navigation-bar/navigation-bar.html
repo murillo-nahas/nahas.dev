@@ -1,0 +1,11 @@
+<div class="flex items-center gap-6 border-b border-solid border-black-secondary py-4">
+  @for (filter of filters; track filter) {
+    <p
+      (click)="onFilter(filter)"
+      [class.text-white-primary]="activeFilter() === filter"
+      class="text-gray-primary text-xs hover:text-white-primary transition-colors duration-300 cursor-pointer"
+    >
+      {{ filter | titlecase }}
+    </p>
+  }
+</div>
