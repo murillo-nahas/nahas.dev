@@ -3,4 +3,18 @@
     <p class="text-white-primary text-2xl">Posts</p>
     <p class="mt-4 text-gray-primary text-sm">What I've been writing lately</p>
   </section>
+
+  <section class="w-full">
+    <div class="mt-8 flex flex-col gap-6">
+      @for (post of posts; track post.title; let last = $last) {
+        <div [class.border-b]="!last" [class.pb-6]="!last" class="border-solid border-black-secondary">
+          <app-post-card
+            [title]="post.title"
+            [description]="post.description"
+            [date]="post.date"
+          />
+        </div>
+      }
+    </div>
+  </section>
 </div>
