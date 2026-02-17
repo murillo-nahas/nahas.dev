@@ -6,10 +6,11 @@
 
   <section class="w-full">
     <div class="mt-8 flex flex-col gap-6">
-      @for (post of posts; track post.title; let last = $last) {
+      @for (post of posts; track post.slug; let last = $last) {
         <div [class.border-b]="!last" [class.pb-6]="!last" class="border-solid border-black-secondary">
           <app-post-card
             [title]="post.title"
+            [slug]="post.slug"
             [description]="post.description"
             [date]="post.date"
           />

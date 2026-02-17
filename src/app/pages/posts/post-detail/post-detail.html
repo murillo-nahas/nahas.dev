@@ -1,0 +1,21 @@
+@if (post(); as post) {
+  <div class="w-full flex flex-col">
+    <div>
+      <p
+        routerLink="/posts"
+        class="text-gray-primary text-xs hover:text-white-primary transition-colors duration-300 cursor-pointer"
+      >
+        ← Back to posts
+      </p>
+    </div>
+
+    <div class="mt-8">
+      <p class="text-white-primary text-2xl">{{ post.title }}</p>
+      <p class="mt-2 text-gray-primary text-xs">{{ post.date }}</p>
+    </div>
+
+    <div class="mt-8 prose prose-invert prose-sm max-w-none">
+      <markdown class="text-white-primary text-sm" ngPreserveWhitespaces [src]="markdownSrc()" />
+    </div>
+  </div>
+}

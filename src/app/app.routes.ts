@@ -14,6 +14,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/posts/posts').then(m => m.Posts),
   },
   {
+    path: 'posts/:slug',
+    loadComponent: () => import('./pages/posts/post-detail/post-detail').then(m => m.PostDetail),
+  },
+  {
     path: 'gallery',
     loadComponent: () => import('./pages/gallery/gallery').then(m => m.Gallery),
   },
