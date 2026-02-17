@@ -3,10 +3,42 @@
 
 * {
   font-family: 'Geist', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--color-black-primary);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-black-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-primary);
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-gray-primary);
+  outline-offset: 2px;
 }
 
 @theme {
@@ -16,4 +48,31 @@ body {
   --color-white-primary: #fafafa;
 
   --color-gray-primary: #a3a3a3;
+}
+
+/* Prevent text selection on UI elements */
+button {
+  user-select: none;
+}
+
+/* Animation utilities */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+}
+
+.slide-in-from-top-2 {
+  animation-duration: 200ms;
+  animation-name: slideInFromTop;
 }

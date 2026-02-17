@@ -1,24 +1,85 @@
-<div class="h-16 flex items-center justify-between text-white-primary">
-  <div class="flex items-center gap-8">
+<div class="h-16 flex items-center justify-between text-white-primary relative">
+  <!-- Desktop Navigation -->
+  <nav class="hidden md:flex items-center gap-8">
     @for (link of links; track link.href) {
-      <p
+      <a
         [routerLink]="link.href"
         routerLinkActive="text-white-primary"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="cursor-pointer text-gray-primary text-sm hover:text-white-primary transition-colors duration-300"
+        (click)="onNavigate()"
+        class="text-gray-primary text-sm hover:text-white-primary transition-colors duration-300 cursor-pointer"
+        aria-label="Navigate to {{ link.label }}"
       >
         {{ link.label }}
-      </p>
+      </a>
     }
-  </div>
+  </nav>
 
+  <!-- Mobile Menu Button -->
   <button
-    class="p-3 flex items-center justify-center cursor-pointer w-6 h-6 rounded-sm hover:bg-black-secondary transition-colors duration-300"
+    (click)="onToggleMobileMenu()"
+    class="md:hidden p-3 flex items-center justify-center cursor-pointer rounded-sm hover:bg-black-secondary transition-colors duration-300"
+    aria-label="Toggle mobile menu"
+    aria-expanded="{{ isMobileMenuOpen() }}"
+  >
+    <lucide-angular
+      [name]="isMobileMenuOpen() ? closeIcon : menuIcon"
+      class="cursor-pointer w-5 h-5 text-gray-primary"
+    ></lucide-angular>
+  </button>
+
+  <!-- Theme Toggle (Desktop) -->
+  <button
+    (click)="onToggleTheme()"
+    class="hidden md:block p-3 flex items-center justify-center cursor-pointer w-6 h-6 rounded-sm hover:bg-black-secondary transition-colors duration-300"
+    aria-label="Toggle theme"
+    aria-label="Switch between dark and light theme"
   >
     <lucide-angular
       [name]="isLightTheme() ? moonIcon : sunIcon"
-      (click)="onToggleTheme()"
       class="cursor-pointer w-4 h-4 text-gray-primary"
     ></lucide-angular>
   </button>
+
+  <!-- Mobile Menu -->
+  @if (isMobileMenuOpen()) {
+    <div
+      class="md:hidden absolute top-16 left-0 right-0 bg-black-primary border-b border-solid border-black-secondary shadow-lg z-50 animate-in slide-in-from-top-2"
+    >
+      <nav class="flex flex-col py-4">
+        @for (link of links; track link.href) {
+          <a
+            [routerLink]="link.href"
+            routerLinkActive="text-white-primary"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="onNavigate()"
+            class="text-gray-primary text-base hover:text-white-primary transition-colors duration-300 cursor-pointer py-3 px-4 hover:bg-black-secondary"
+            aria-label="Navigate to {{ link.label }}"
+          >
+            {{ link.label }}
+          </a>
+        }
+
+        <div class="border-t border-solid border-black-secondary mt-2 pt-4">
+          <button
+            (click)="onToggleTheme()"
+            class="flex items-center gap-3 w-full py-3 px-4 text-gray-primary hover:text-white-primary hover:bg-black-secondary transition-colors duration-300 cursor-pointer"
+            aria-label="Toggle theme"
+          >
+            <lucide-angular
+              [name]="isLightTheme() ? moonIcon : sunIcon"
+              class="w-5 h-5"
+            ></lucide-angular>
+            <span class="text-sm">
+              @if (isLightTheme()) {
+                Switch to Dark Theme
+              } @else {
+                Switch to Light Theme
+              }
+            </span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  }
 </div>
