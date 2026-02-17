@@ -1,21 +1,23 @@
 @if (post(); as post) {
-  <div class="w-full flex flex-col">
-    <div>
-      <p
+  <article class="w-full flex flex-col">
+    <nav aria-label="Breadcrumb">
+      <a
         routerLink="/posts"
         class="text-gray-primary text-xs hover:text-white-primary transition-colors duration-300 cursor-pointer"
       >
         ← Back to posts
+      </a>
+    </nav>
+
+    <div class="mt-8">
+      <h1 class="text-white-primary text-2xl">{{ post.title }}</h1>
+      <p class="mt-2 text-gray-primary text-xs">
+        <time>{{ post.date }}</time>
       </p>
     </div>
 
-    <div class="mt-8">
-      <p class="text-white-primary text-2xl">{{ post.title }}</p>
-      <p class="mt-2 text-gray-primary text-xs">{{ post.date }}</p>
-    </div>
-
     <div class="mt-8 prose prose-invert prose-sm max-w-none">
-      <markdown class="text-white-primary text-sm" ngPreserveWhitespaces [src]="markdownSrc()" />
+      <markdown ngPreserveWhitespaces [src]="markdownSrc()" />
     </div>
-  </div>
+  </article>
 }

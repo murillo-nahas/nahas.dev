@@ -1,11 +1,12 @@
 <div class="w-full flex justify-center flex-col items-center">
   <section class="w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-3xl">Murillo Nahas 🖐️</p>
+    <h1 class="text-white-primary text-3xl">Murillo Nahas 🖐️</h1>
     <p class="mt-4 text-gray-primary">
       Full Stack Software Engineer at
       <a
         href="https://merch.co"
         target="_blank"
+        rel="noopener noreferrer"
         class="text-white-primary hover:text-gray-primary underline transition-colors duration-300 cursor-pointer"
         >Merch</a
       >
@@ -13,36 +14,37 @@
   </section>
 
   <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">Experience</p>
+    <h2 class="text-white-primary text-2xl">Experience</h2>
 
     @for (experience of experiences; track experience.title; let first = $first) {
-      <div class="flex flex-col gap-2" [class.mt-6]="first" [class.mt-10]="!first">
-        <p class="text-sm text-white-primary">{{ experience.title }}</p>
+      <article class="flex flex-col gap-2" [class.mt-6]="first" [class.mt-10]="!first">
+        <h3 class="text-sm text-white-primary">{{ experience.title }}</h3>
         <p class="text-gray-primary text-xs">
           <a
             [href]="experience.companyLink"
             target="_blank"
+            rel="noopener noreferrer"
             class="text-gray-primary hover:text-white-primary underline cursor-pointer"
             >{{ experience.company }}</a
           >, {{ experience.date }}
         </p>
         <p class="mt-2 text-gray-primary text-xs">{{ experience.description }}</p>
-      </div>
+      </article>
     }
   </section>
 
   <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
     <div class="flex justify-between items-center">
-      <p class="text-white-primary text-2xl">Projects</p>
-      <p
+      <h2 class="text-white-primary text-2xl">Projects</h2>
+      <a
         class="group text-gray-primary text-xs hover:text-white-primary transition-colors duration-300 cursor-pointer"
         routerLink="/projects"
       >
-        View all
+        View all projects
         <span class="inline-block transition-transform duration-300 group-hover:translate-x-[2px]">
           →
         </span>
-      </p>
+      </a>
     </div>
 
     <div class="mt-8 flex flex-col gap-6">
@@ -58,10 +60,10 @@
   </section>
 
   <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">Education</p>
+    <h2 class="text-white-primary text-2xl">Education</h2>
 
     <div class="mt-6 flex flex-col gap-2">
-      <p class="text-sm text-white-primary">Bachelor of Systems Analysis and Development</p>
+      <h3 class="text-sm text-white-primary">Bachelor of Systems Analysis and Development</h3>
       <p class="text-gray-primary text-xs">Faculdade Estácio, 2025 · 2027</p>
     </div>
   </section>

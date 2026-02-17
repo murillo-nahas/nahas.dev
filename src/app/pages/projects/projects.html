@@ -1,6 +1,6 @@
 <div class="w-full flex justify-center flex-col items-center">
   <section class="w-full pb-8">
-    <p class="text-white-primary text-2xl">Projects</p>
+    <h1 class="text-white-primary text-2xl">Projects</h1>
     <p class="mt-4 text-gray-primary text-sm">What I've been building lately</p>
   </section>
 
@@ -9,7 +9,7 @@
 
     <div class="mt-8 flex flex-col gap-6">
       @for (project of filteredProjects(); track project.name; let last = $last) {
-        <div [class.border-b]="!last" [class.pb-6]="!last" class="border-solid border-black-secondary">
+        <article [class.border-b]="!last" [class.pb-6]="!last" class="border-solid border-black-secondary">
           <app-project-card
             [name]="project.name"
             [description]="project.description"
@@ -17,7 +17,7 @@
             [link]="project.link"
             [techs]="project.techs"
           />
-        </div>
+        </article>
       }
     </div>
   </section>

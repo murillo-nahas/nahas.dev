@@ -1,16 +1,23 @@
-<div
+<article
   class="group w-full cursor-pointer hover:bg-black-secondary rounded-sm p-3 transition-colors duration-500"
 >
   <div class="flex items-center justify-between">
     <a
       [href]="link()"
       target="_blank"
+      rel="noopener noreferrer"
       class="text-sm text-white-primary underline hover:decoration-gray-primary hover:text-gray-primary transition-colors duration-300 cursor-pointer"
     >
       {{ name() }}
     </a>
 
-    <a [href]="link()" target="_blank" class="hidden group-hover:block">
+    <a
+      [href]="link()"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open project link"
+      class="hidden group-hover:block"
+    >
       <lucide-angular
         [name]="linkIcon"
         class="cursor-pointer hover:text-white-primary transition-colors duration-300 w-4 h-4 text-gray-primary"
@@ -26,4 +33,4 @@
       </div>
     }
   </div>
-</div>
+</article>

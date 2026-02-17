@@ -1,6 +1,6 @@
 <div class="w-full flex justify-center flex-col items-center">
   <section class="w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">About me</p>
+    <h1 class="text-white-primary text-2xl">About me</h1>
     <p class="mt-4 text-gray-primary text-sm">
       Hey! I'm Murillo Nahas, a full-stack software engineer with a strong focus on building
       scalable, real-world systems. Most of my work lives in the JavaScript/TypeScript ecosystem,
@@ -15,6 +15,7 @@
       <a
         href="https://merch.co"
         target="_blank"
+        rel="noopener noreferrer"
         class="text-white-primary underline hover:text-gray-primary transition-colors duration-300"
         >Merch</a
       >, I design and ship features used in production by real teams, often touching multiple layers
@@ -34,67 +35,60 @@
     </p>
 
     <div class="mt-8 flex items-center gap-6">
-      <button
-        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2"
+      <a
+        href="assets/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2 text-gray-primary hover:text-white-primary text-xs"
       >
-        <a
-          href="assets/resume.pdf"
-          target="_blank"
-          class="text-gray-primary hover:text-white-primary transition-colors duration-300 text-xs cursor-pointer"
-        >
-          Access resume
-        </a>
-      </button>
+        Access resume
+      </a>
 
-      <button
-        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2"
+      <a
+        href="mailto:murillonahas2003@gmail.com"
+        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2 text-gray-primary hover:text-white-primary text-xs"
       >
-        <a
-          href="mailto:murillonahas2003@gmail.com"
-          class="text-gray-primary hover:text-white-primary transition-colors duration-300 text-xs cursor-pointer"
-        >
-          Send me an email</a
-        >
-      </button>
+        Send me an email
+      </a>
     </div>
   </section>
 
   <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">Technologies</p>
+    <h2 class="text-white-primary text-2xl">Technologies</h2>
 
     <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Languages</p>
+      <h3 class="text-xs text-white-primary">Languages</h3>
       <p class="text-gray-primary text-xs">TypeScript, JavaScript</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Frontend</p>
+      <h3 class="text-xs text-white-primary">Frontend</h3>
       <p class="text-gray-primary text-xs">Angular, React.js, Next.js, Tailwind CSS</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Backend</p>
+      <h3 class="text-xs text-white-primary">Backend</h3>
       <p class="text-gray-primary text-xs">Node.js, NestJS, Fastify, Express.js</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Mobile</p>
+      <h3 class="text-xs text-white-primary">Mobile</h3>
       <p class="text-gray-primary text-xs">Ionic, React Native</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Databases & ORMs</p>
+      <h3 class="text-xs text-white-primary">Databases & ORMs</h3>
       <p class="text-gray-primary text-xs">MySQL, PostgreSQL, MongoDB, Prisma, TypeORM</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Infrastructure</p>
+      <h3 class="text-xs text-white-primary">Infrastructure</h3>
       <p class="text-gray-primary text-xs">Docker, AWS, Firebase, Vercel</p>
     </div>
   </section>
 
   <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">Reading List</p>
+    <h2 class="text-white-primary text-2xl">Reading List</h2>
 
     @for (book of readingList; track book.title; let first = $first) {
       <p class="text-gray-primary text-xs" [class.mt-6]="first" [class.mt-4]="!first">
@@ -105,7 +99,7 @@
   </section>
 
   <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">What I Plan to Learn in 2026</p>
+    <h2 class="text-white-primary text-2xl">What I Plan to Learn in 2026</h2>
 
     <p class="mt-6 text-gray-primary text-xs">
       Software Architecture - System Design - Backend Engineering - Databases Engineering - AI -

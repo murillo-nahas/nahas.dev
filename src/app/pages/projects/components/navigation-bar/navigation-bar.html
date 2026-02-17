@@ -1,11 +1,11 @@
-<div class="flex items-center gap-6 border-b border-solid border-black-secondary py-4">
+<nav class="flex items-center gap-6 border-b border-solid border-black-secondary py-4" aria-label="Project filters">
   @for (filter of filters; track filter) {
-    <p
+    <button
       (click)="onFilter(filter)"
       [class.text-white-primary]="activeFilter() === filter"
-      class="text-gray-primary text-xs hover:text-white-primary transition-colors duration-300 cursor-pointer"
+      class="text-gray-primary text-xs hover:text-white-primary transition-colors duration-300 cursor-pointer bg-transparent border-none p-0"
     >
       {{ filter | titlecase }}
-    </p>
+    </button>
   }
-</div>
+</nav>
