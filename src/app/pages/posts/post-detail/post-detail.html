@@ -1,21 +1,41 @@
 @if (post(); as post) {
-  <div class="w-full flex flex-col">
+  <div class="w-full flex flex-col pb-8">
+    <!-- Back Button -->
     <div>
-      <p
+      <a
         routerLink="/posts"
-        class="text-gray-primary text-xs hover:text-white-primary transition-colors duration-300 cursor-pointer"
+        class="inline-flex items-center gap-1 text-gray-primary text-xs sm:text-sm hover:text-white-primary transition-all duration-300 cursor-pointer py-2 group"
+        aria-label="Back to posts"
       >
-        ← Back to posts
+        <lucide-angular
+          [name]="arrowLeftIcon"
+          class="w-4 h-4 group-hover:-translate-x-1 transition-transform"
+        ></lucide-angular>
+        Back to posts
+      </a>
+    </div>
+
+    <!-- Post Title and Date -->
+    <div class="mt-6 sm:mt-8 md:mt-10">
+      <h1
+        class="text-white-primary text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight"
+      >
+        {{ post.title }}
+      </h1>
+      <p class="mt-3 sm:mt-4 text-gray-primary text-xs sm:text-sm opacity-70">
+        {{ post.date }}
       </p>
     </div>
 
-    <div class="mt-8">
-      <p class="text-white-primary text-2xl">{{ post.title }}</p>
-      <p class="mt-2 text-gray-primary text-xs">{{ post.date }}</p>
-    </div>
-
-    <div class="mt-8 prose prose-invert prose-sm max-w-none">
-      <markdown class="text-white-primary text-sm" ngPreserveWhitespaces [src]="markdownSrc()" />
+    <!-- Post Content -->
+    <div
+      class="mt-6 sm:mt-8 md:mt-10 prose prose-invert prose-sm sm:prose-base max-w-none prose-headings:text-white-primary prose-h1:text-2xl sm:prose-h1:text-3xl prose-h2:text-xl sm:prose-h2:text-2xl prose-p:text-gray-primary prose-a:text-white-primary prose-strong:text-white-primary prose-code:text-white-primary"
+    >
+      <markdown
+        class="text-white-primary"
+        ngPreserveWhitespaces
+        [src]="markdownSrc()"
+      />
     </div>
   </div>
 }

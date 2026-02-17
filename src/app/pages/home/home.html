@@ -1,51 +1,69 @@
 <div class="w-full flex justify-center flex-col items-center">
-  <section class="w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-3xl">Murillo Nahas 🖐️</p>
-    <p class="mt-4 text-gray-primary">
+  <!-- Hero Section -->
+  <section class="w-full pb-6 sm:pb-8 md:pb-10 border-b border-solid border-black-secondary">
+    <h1 class="text-white-primary text-2xl sm:text-3xl md:text-4xl font-semibold">
+      Murillo Nahas 🖐️
+    </h1>
+    <p class="mt-3 sm:mt-4 md:mt-5 text-gray-primary text-sm sm:text-base">
       Full Stack Software Engineer at
       <a
         href="https://merch.co"
         target="_blank"
+        rel="noopener noreferrer"
         class="text-white-primary hover:text-gray-primary underline transition-colors duration-300 cursor-pointer"
         >Merch</a
       >
     </p>
   </section>
 
-  <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">Experience</p>
+  <!-- Experience Section -->
+  <section class="mt-6 sm:mt-8 md:mt-10 w-full pb-6 sm:pb-8 md:pb-10 border-b border-solid border-black-secondary">
+    <h2 class="text-white-primary text-xl sm:text-2xl md:text-3xl font-semibold">
+      Experience
+    </h2>
 
-    @for (experience of experiences; track experience.title; let first = $first) {
-      <div class="flex flex-col gap-2" [class.mt-6]="first" [class.mt-10]="!first">
-        <p class="text-sm text-white-primary">{{ experience.title }}</p>
-        <p class="text-gray-primary text-xs">
-          <a
-            [href]="experience.companyLink"
-            target="_blank"
-            class="text-gray-primary hover:text-white-primary underline cursor-pointer"
-            >{{ experience.company }}</a
-          >, {{ experience.date }}
-        </p>
-        <p class="mt-2 text-gray-primary text-xs">{{ experience.description }}</p>
-      </div>
-    }
+    <div class="mt-6 sm:mt-8 flex flex-col gap-3 sm:gap-4">
+      @for (experience of experiences; track experience.title) {
+        <div class="flex flex-col gap-2">
+          <p class="text-sm sm:text-base text-white-primary font-medium">
+            {{ experience.title }}
+          </p>
+          <p class="text-gray-primary text-xs sm:text-sm">
+            <a
+              [href]="experience.companyLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-primary hover:text-white-primary underline cursor-pointer transition-colors"
+              >{{ experience.company }}</a
+            >, {{ experience.date }}
+          </p>
+          <p class="mt-1 sm:mt-2 text-gray-primary text-xs sm:text-sm leading-relaxed">
+            {{ experience.description }}
+          </p>
+        </div>
+      }
+    </div>
   </section>
 
-  <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
+  <!-- Projects Section -->
+  <section class="mt-6 sm:mt-8 md:mt-10 w-full pb-6 sm:pb-8 md:pb-10 border-b border-solid border-black-secondary">
     <div class="flex justify-between items-center">
-      <p class="text-white-primary text-2xl">Projects</p>
-      <p
-        class="group text-gray-primary text-xs hover:text-white-primary transition-colors duration-300 cursor-pointer"
+      <h2 class="text-white-primary text-xl sm:text-2xl md:text-3xl font-semibold">
+        Projects
+      </h2>
+      <a
         routerLink="/projects"
+        class="group text-gray-primary text-xs sm:text-sm hover:text-white-primary transition-all duration-300 cursor-pointer flex items-center gap-1"
+        aria-label="View all projects"
       >
         View all
         <span class="inline-block transition-transform duration-300 group-hover:translate-x-[2px]">
           →
         </span>
-      </p>
+      </a>
     </div>
 
-    <div class="mt-8 flex flex-col gap-6">
+    <div class="mt-6 sm:mt-8 flex flex-col gap-4 sm:gap-6">
       @for (project of projects; track project.name) {
         <app-project-card
           [name]="project.name"
@@ -57,16 +75,24 @@
     </div>
   </section>
 
-  <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">Education</p>
+  <!-- Education Section -->
+  <section class="mt-6 sm:mt-8 md:mt-10 w-full pb-6 sm:pb-8 md:pb-10 border-b border-solid border-black-secondary">
+    <h2 class="text-white-primary text-xl sm:text-2xl md:text-3xl font-semibold">
+      Education
+    </h2>
 
-    <div class="mt-6 flex flex-col gap-2">
-      <p class="text-sm text-white-primary">Bachelor of Systems Analysis and Development</p>
-      <p class="text-gray-primary text-xs">Faculdade Estácio, 2025 · 2027</p>
+    <div class="mt-6 sm:mt-8 flex flex-col gap-2">
+      <p class="text-sm sm:text-base text-white-primary font-medium">
+        Bachelor of Systems Analysis and Development
+      </p>
+      <p class="text-gray-primary text-xs sm:text-sm">
+        Faculdade Estácio, 2025 · 2027
+      </p>
     </div>
   </section>
 
-  <section class="w-full">
+  <!-- Connect Section -->
+  <section class="w-full mt-6 sm:mt-8 md:mt-10 pb-6 sm:pb-8 md:pb-10">
     <app-connect />
   </section>
 </div>

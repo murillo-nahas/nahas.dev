@@ -1,119 +1,167 @@
 <div class="w-full flex justify-center flex-col items-center">
-  <section class="w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">About me</p>
-    <p class="mt-4 text-gray-primary text-sm">
-      Hey! I'm Murillo Nahas, a full-stack software engineer with a strong focus on building
-      scalable, real-world systems. Most of my work lives in the JavaScript/TypeScript ecosystem,
-      where I build Angular frontends and NestJS backends inside large, modular monorepos. I enjoy
-      understanding how things work end to end, from UI state management and performance to APIs,
-      databases, and infrastructure, and I'm naturally drawn to problems that require both technical
-      depth and clear reasoning.
-    </p>
+  <!-- About Section -->
+  <section class="w-full pb-6 sm:pb-8 md:pb-10 border-b border-solid border-black-secondary">
+    <h1 class="text-white-primary text-2xl sm:text-3xl md:text-4xl font-semibold">
+      About me
+    </h1>
 
-    <p class="mt-4 text-gray-primary text-sm">
-      At
-      <a
-        href="https://merch.co"
-        target="_blank"
-        class="text-white-primary underline hover:text-gray-primary transition-colors duration-300"
-        >Merch</a
-      >, I design and ship features used in production by real teams, often touching multiple layers
-      of the system. I work with Angular, Node.js, NestJS, MongoDB, Prisma, and AWS-based services,
-      and I care deeply about code quality, architecture, and long-term maintainability. Beyond
-      writing code, I spend a lot of time thinking about system design, modularity, developer
-      experience, and how to evolve large, existing systems without breaking what already works.
-    </p>
-
-    <p class="mt-4 text-gray-primary text-sm">
-      What motivates me most is impact and growth. I like solving complex problems, mentoring
-      through discussions and code reviews, and constantly refining how I think about software
-      engineering. I'm actively pushing toward a senior-level mindset, with the goal of working on
-      high-scale products and eventually contributing at a global level. Outside of coding, I value
-      discipline, consistency, and balance, traits I bring into both my technical work and personal
-      life.
-    </p>
-
-    <div class="mt-8 flex items-center gap-6">
-      <button
-        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2"
-      >
-        <a
-          href="assets/resume.pdf"
-          target="_blank"
-          class="text-gray-primary hover:text-white-primary transition-colors duration-300 text-xs cursor-pointer"
-        >
-          Access resume
-        </a>
-      </button>
-
-      <button
-        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2"
-      >
-        <a
-          href="mailto:murillonahas2003@gmail.com"
-          class="text-gray-primary hover:text-white-primary transition-colors duration-300 text-xs cursor-pointer"
-        >
-          Send me an email</a
-        >
-      </button>
-    </div>
-  </section>
-
-  <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">Technologies</p>
-
-    <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Languages</p>
-      <p class="text-gray-primary text-xs">TypeScript, JavaScript</p>
-    </div>
-
-    <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Frontend</p>
-      <p class="text-gray-primary text-xs">Angular, React.js, Next.js, Tailwind CSS</p>
-    </div>
-
-    <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Backend</p>
-      <p class="text-gray-primary text-xs">Node.js, NestJS, Fastify, Express.js</p>
-    </div>
-
-    <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Mobile</p>
-      <p class="text-gray-primary text-xs">Ionic, React Native</p>
-    </div>
-
-    <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Databases & ORMs</p>
-      <p class="text-gray-primary text-xs">MySQL, PostgreSQL, MongoDB, Prisma, TypeORM</p>
-    </div>
-
-    <div class="mt-6 flex flex-col gap-2">
-      <p class="text-xs text-white-primary">Infrastructure</p>
-      <p class="text-gray-primary text-xs">Docker, AWS, Firebase, Vercel</p>
-    </div>
-  </section>
-
-  <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">Reading List</p>
-
-    @for (book of readingList; track book.title; let first = $first) {
-      <p class="text-gray-primary text-xs" [class.mt-6]="first" [class.mt-4]="!first">
-        {{ book.title }} — {{ book.author }}
-        <span class="text-white-primary">({{ book.status }})</span>
+    <div class="mt-4 sm:mt-6 md:mt-8 flex flex-col gap-4 sm:gap-5 md:gap-6">
+      <p class="text-gray-primary text-sm sm:text-base leading-relaxed">
+        Hey! I'm Murillo Nahas, a full-stack software engineer with a strong
+        focus on building scalable, real-world systems. Most of my work lives
+        in the JavaScript/TypeScript ecosystem, where I build Angular
+        frontends and NestJS backends inside large, modular monorepos. I
+        enjoy understanding how things work end to end, from UI state
+        management and performance to APIs, databases, and infrastructure,
+        and I'm naturally drawn to problems that require both technical
+        depth and clear reasoning.
       </p>
-    }
+
+      <p class="text-gray-primary text-sm sm:text-base leading-relaxed">
+        At
+        <a
+          href="https://merch.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-white-primary underline hover:text-gray-primary transition-colors duration-300 font-medium"
+          >Merch</a
+        >, I design and ship features used in production by real teams,
+        often touching multiple layers of system. I work with Angular,
+        Node.js, NestJS, MongoDB, Prisma, and AWS-based services, and I
+        care deeply about code quality, architecture, and long-term
+        maintainability. Beyond writing code, I spend a lot of time thinking
+        about system design, modularity, developer experience, and how to
+        evolve large, existing systems without breaking what already works.
+      </p>
+
+      <p class="text-gray-primary text-sm sm:text-base leading-relaxed">
+        What motivates me most is impact and growth. I like solving complex
+        problems, mentoring through discussions and code reviews, and
+        constantly refining how I think about software engineering. I'm
+        actively pushing toward a senior-level mindset, with the goal of
+        working on high-scale products and eventually contributing at a
+        global level. Outside of coding, I value discipline, consistency,
+        and balance, traits I bring into both my technical work and
+        personal life.
+      </p>
+    </div>
+
+    <div class="mt-6 sm:mt-8 md:mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
+      <a
+        href="assets/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:bg-black-secondary transition-all duration-300 cursor-pointer rounded-lg py-2.5 px-4 sm:px-5 flex items-center gap-2 text-gray-primary hover:text-white-primary text-xs sm:text-sm font-medium"
+        aria-label="Download resume"
+      >
+        <lucide-angular [name]="downloadIcon" class="w-4 h-4"></lucide-angular>
+        Access resume
+      </a>
+
+      <a
+        href="mailto:murillonahas2003@gmail.com"
+        rel="noopener noreferrer"
+        class="hover:bg-black-secondary transition-all duration-300 cursor-pointer rounded-lg py-2.5 px-4 sm:px-5 text-gray-primary hover:text-white-primary text-xs sm:text-sm font-medium"
+        aria-label="Send email"
+      >
+        Send me an email
+      </a>
+    </div>
   </section>
 
-  <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
-    <p class="text-white-primary text-2xl">What I Plan to Learn in 2026</p>
+  <!-- Technologies Section -->
+  <section
+    class="mt-6 sm:mt-8 md:mt-10 w-full pb-6 sm:pb-8 md:pb-10 border-b border-solid border-black-secondary"
+  >
+    <h2 class="text-white-primary text-xl sm:text-2xl md:text-3xl font-semibold">
+      Technologies
+    </h2>
 
-    <p class="mt-6 text-gray-primary text-xs">
-      Software Architecture - System Design - Backend Engineering - Databases Engineering - AI -
-      Product
+    <div class="mt-4 sm:mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <div class="flex flex-col gap-1.5 sm:gap-2">
+        <h3 class="text-xs sm:text-sm text-white-primary font-medium">Languages</h3>
+        <p class="text-gray-primary text-sm sm:text-base">TypeScript, JavaScript</p>
+      </div>
+
+      <div class="flex flex-col gap-1.5 sm:gap-2">
+        <h3 class="text-xs sm:text-sm text-white-primary font-medium">Frontend</h3>
+        <p class="text-gray-primary text-sm sm:text-base">
+          Angular, React.js, Next.js, Tailwind CSS
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-1.5 sm:gap-2">
+        <h3 class="text-xs sm:text-sm text-white-primary font-medium">Backend</h3>
+        <p class="text-gray-primary text-sm sm:text-base">
+          Node.js, NestJS, Fastify, Express.js
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-1.5 sm:gap-2">
+        <h3 class="text-xs sm:text-sm text-white-primary font-medium">Mobile</h3>
+        <p class="text-gray-primary text-sm sm:text-base">Ionic, React Native</p>
+      </div>
+
+      <div class="flex flex-col gap-1.5 sm:gap-2">
+        <h3 class="text-xs sm:text-sm text-white-primary font-medium">
+          Databases & ORMs
+        </h3>
+        <p class="text-gray-primary text-sm sm:text-base">
+          MySQL, PostgreSQL, MongoDB, Prisma, TypeORM
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-1.5 sm:gap-2">
+        <h3 class="text-xs sm:text-sm text-white-primary font-medium">
+          Infrastructure
+        </h3>
+        <p class="text-gray-primary text-sm sm:text-base">
+          Docker, AWS, Firebase, Vercel
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reading List Section -->
+  <section
+    class="mt-6 sm:mt-8 md:mt-10 w-full pb-6 sm:pb-8 md:pb-10 border-b border-solid border-black-secondary"
+  >
+    <h2 class="text-white-primary text-xl sm:text-2xl md:text-3xl font-semibold">
+      Reading List
+    </h2>
+
+    <div class="mt-4 sm:mt-6 md:mt-8 flex flex-col gap-3 sm:gap-4">
+      @for (book of readingList; track book.title) {
+        <div class="flex items-start sm:items-center gap-2 sm:gap-3 py-2 border-b border-black-secondary last:border-b-0">
+          <lucide-angular [name]="bookIcon" class="w-4 h-4 text-gray-primary shrink-0 mt-1 sm:mt-0"></lucide-angular>
+          <p class="text-gray-primary text-sm sm:text-base">
+            <span class="text-white-primary font-medium">{{ book.title }}</span>
+            — {{ book.author }}
+            <span class="text-white-primary text-xs sm:text-sm ml-2 px-2 py-0.5 bg-black-secondary rounded-sm"
+              >{{ book.status }}</span
+            >
+          </p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Learning Plan Section -->
+  <section
+    class="mt-6 sm:mt-8 md:mt-10 w-full pb-6 sm:pb-8 md:pb-10 border-b border-solid border-black-secondary"
+  >
+    <h2 class="text-white-primary text-xl sm:text-2xl md:text-3xl font-semibold">
+      What I Plan to Learn in 2026
+    </h2>
+
+    <p class="mt-4 sm:mt-6 md:mt-8 text-gray-primary text-sm sm:text-base leading-relaxed">
+      Software Architecture — System Design — Backend Engineering — Databases
+      Engineering — AI — Product
     </p>
   </section>
 
-  <section class="w-full">
+  <!-- Connect Section -->
+  <section class="mt-6 sm:mt-8 md:mt-10 w-full pb-6 sm:pb-8 md:pb-10">
     <app-connect />
   </section>
 </div>

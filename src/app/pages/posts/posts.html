@@ -1,13 +1,22 @@
 <div class="w-full flex justify-center flex-col items-center">
-  <section class="w-full pb-8">
-    <p class="text-white-primary text-2xl">Posts</p>
-    <p class="mt-4 text-gray-primary text-sm">What I've been writing lately</p>
+  <section class="w-full pb-6 sm:pb-8 md:pb-10">
+    <h1 class="text-white-primary text-2xl sm:text-3xl md:text-4xl font-semibold">
+      Posts
+    </h1>
+    <p class="mt-3 sm:mt-4 md:mt-5 text-gray-primary text-sm sm:text-base">
+      What I've been writing lately
+    </p>
   </section>
 
   <section class="w-full">
-    <div class="mt-8 flex flex-col gap-6">
+    <div class="mt-6 sm:mt-8 flex flex-col gap-4 sm:gap-6">
       @for (post of posts; track post.slug; let last = $last) {
-        <div [class.border-b]="!last" [class.pb-6]="!last" class="border-solid border-black-secondary">
+        <div
+          [class.border-b]="!last"
+          [class.pb-4]="!last"
+          [class.pb-6]="last"
+          class="border-solid border-black-secondary"
+        >
           <app-post-card
             [title]="post.title"
             [slug]="post.slug"

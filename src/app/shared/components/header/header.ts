@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { LucideAngularModule, Moon, Sun } from 'lucide-angular';
+import { LucideAngularModule, Moon, Sun, Menu, X } from 'lucide-angular';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,10 @@ import { LucideAngularModule, Moon, Sun } from 'lucide-angular';
 export class Header {
   readonly sunIcon = Sun;
   readonly moonIcon = Moon;
+  readonly menuIcon = Menu;
+  readonly closeIcon = X;
   readonly isLightTheme = signal(false);
+  readonly isMobileMenuOpen = signal(false);
 
   readonly links: { label: string, href: string }[] = [
     {
@@ -37,5 +40,13 @@ export class Header {
 
   onToggleTheme(): void {
     this.isLightTheme.set(!this.isLightTheme());
+  }
+
+  onToggleMobileMenu(): void {
+    this.isMobileMenuOpen.set(!this.isMobileMenuOpen());
+  }
+
+  onNavigate(): void {
+    this.isMobileMenuOpen.set(false);
   }
 }
