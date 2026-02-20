@@ -18,8 +18,8 @@
 
     @for (experience of experiences; track experience.title; let first = $first) {
       <article class="flex flex-col gap-2" [class.mt-6]="first" [class.mt-10]="!first">
-        <h3 class="text-sm text-white-primary">{{ experience.title }}</h3>
-        <p class="text-gray-primary text-xs">
+        <h3 class="text-white-primary">{{ experience.title }}</h3>
+        <p class="text-gray-primary text-sm">
           <a
             [href]="experience.companyLink"
             target="_blank"
@@ -28,7 +28,7 @@
             >{{ experience.company }}</a
           >, {{ experience.date }}
         </p>
-        <p class="mt-2 text-gray-primary text-xs">{{ experience.description }}</p>
+        <p class="mt-2 text-gray-primary text-sm">{{ experience.description }}</p>
       </article>
     }
   </section>
@@ -63,8 +63,8 @@
     <h2 class="text-white-primary text-2xl">Education</h2>
 
     <div class="mt-6 flex flex-col gap-2">
-      <h3 class="text-sm text-white-primary">Bachelor of Systems Analysis and Development</h3>
-      <p class="text-gray-primary text-xs">Faculdade Estácio, 2025 · 2027</p>
+      <h3 class="text-white-primary">Bachelor of Systems Analysis and Development</h3>
+      <p class="text-gray-primary text-sm">Faculdade Estácio, 2025 · 2027</p>
     </div>
   </section>
 
