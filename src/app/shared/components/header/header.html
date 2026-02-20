@@ -1,4 +1,7 @@
-<nav class="h-16 flex items-center justify-between text-white-primary" aria-label="Main navigation">
+<nav
+  class="hidden sm:flex h-16 items-center justify-between text-white-primary"
+  aria-label="Main navigation"
+>
   <div class="flex items-center gap-8">
     @for (link of links; track link.href) {
       <a
@@ -23,3 +26,54 @@
     ></lucide-angular>
   </button>
 </nav>
+
+<div class="flex sm:hidden h-16 items-center justify-end">
+  <button
+    aria-label="Open menu"
+    (click)="onToggleMobileMenu()"
+    class="p-2 cursor-pointer"
+  >
+    <lucide-angular
+      [name]="menuIcon"
+      class="w-5 h-5 text-gray-primary"
+    ></lucide-angular>
+  </button>
+</div>
+
+@if (isMobileMenuOpen()) {
+  <div class="fixed inset-0 z-50 bg-black-primary flex flex-col px-6 py-4">
+    <div class="flex items-center justify-end">
+      <button
+        aria-label="Close menu"
+        (click)="onCloseMobileMenu()"
+        class="p-2 cursor-pointer"
+      >
+        <lucide-angular
+          [name]="closeIcon"
+          class="w-5 h-5 text-gray-primary"
+        ></lucide-angular>
+      </button>
+    </div>
+
+    <nav class="mt-12 flex flex-col gap-6" aria-label="Mobile navigation">
+      @for (link of links; track link.href) {
+        <a
+          [routerLink]="link.href"
+          routerLinkActive="text-white-primary"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="onCloseMobileMenu()"
+          class="text-gray-primary text-lg hover:text-white-primary transition-colors duration-300"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+
+    <button
+      (click)="onToggleTheme()"
+      class="mt-12 text-gray-primary text-sm hover:text-white-primary transition-colors duration-300 cursor-pointer text-left"
+    >
+      Switch to {{ isLightTheme() ? 'dark' : 'light' }} mode
+    </button>
+  </div>
+}
