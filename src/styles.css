@@ -159,6 +159,22 @@ button {
   animation-name: slideInFromTop;
 }
 
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-from-bottom {
+  animation-duration: 350ms;
+  animation-name: slideInFromBottom;
+}
+
 @theme {
   --color-black-primary: #0a0a0a;
   --color-black-secondary: #222222;
