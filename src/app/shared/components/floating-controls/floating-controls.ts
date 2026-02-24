@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LucideAngularModule, Moon, Sun } from 'lucide-angular';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-floating-controls',
@@ -9,9 +10,5 @@ import { LucideAngularModule, Moon, Sun } from 'lucide-angular';
 export class FloatingControls {
   readonly sunIcon = Sun;
   readonly moonIcon = Moon;
-  readonly isLightTheme = signal(false);
-
-  onToggleTheme(): void {
-    this.isLightTheme.set(!this.isLightTheme());
-  }
+  readonly theme = inject(ThemeService);
 }

@@ -47,10 +47,10 @@
     </nav>
 
     <button
-      (click)="onToggleTheme()"
+      (click)="theme.onToggleTheme()"
       class="mt-12 text-gray-primary text-sm hover:text-white-primary transition-colors duration-300 cursor-pointer text-left"
     >
-      Switch to {{ isLightTheme() ? 'dark' : 'light' }} mode
+      Switch to {{ theme.isLight() ? 'dark' : 'light' }} mode
     </button>
   </div>
 }

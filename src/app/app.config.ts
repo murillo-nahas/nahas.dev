@@ -1,6 +1,6 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, SecurityContext } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
-import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { provideRouter, withComponentInputBinding, withViewTransitions } from '@angular/router';
 import { provideMarkdown, SANITIZE } from 'ngx-markdown';
 
 import 'prismjs';
@@ -14,7 +14,7 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes, withComponentInputBinding()),
+    provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
     provideHttpClient(),
     provideMarkdown({
       sanitize: { provide: SANITIZE, useValue: SecurityContext.NONE },

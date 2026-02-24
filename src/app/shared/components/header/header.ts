@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { LucideAngularModule, Menu, Moon, Sun, X } from 'lucide-angular';
+import { LucideAngularModule, Menu, X } from 'lucide-angular';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -9,39 +10,18 @@ import { LucideAngularModule, Menu, Moon, Sun, X } from 'lucide-angular';
   styleUrls: ['./header.css'],
 })
 export class Header {
-  readonly sunIcon = Sun;
-  readonly moonIcon = Moon;
   readonly menuIcon = Menu;
   readonly closeIcon = X;
-  readonly isLightTheme = signal(false);
   readonly isMobileMenuOpen = signal(false);
+  readonly theme = inject(ThemeService);
 
   readonly links: { label: string; href: string }[] = [
-    {
-      label: 'Home',
-      href: '/',
-    },
-    {
-      label: 'About',
-      href: '/about',
-    },
-    {
-      label: 'Projects',
-      href: '/projects',
-    },
-    {
-      label: 'Posts',
-      href: '/posts',
-    },
-    {
-      label: 'Gallery',
-      href: '/gallery',
-    },
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Posts', href: '/posts' },
+    { label: 'Gallery', href: '/gallery' },
   ];
-
-  onToggleTheme(): void {
-    this.isLightTheme.set(!this.isLightTheme());
-  }
 
   onToggleMobileMenu(): void {
     this.isMobileMenuOpen.set(!this.isMobileMenuOpen());
