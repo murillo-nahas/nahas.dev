@@ -6,9 +6,9 @@
     @for (link of links; track link.href) {
       <a
         [routerLink]="link.href"
-        routerLinkActive="text-white-primary"
+        routerLinkActive="text-white-primary !bg-gradient-to-b !from-white/10 !to-white/5 !border-white/10 nav-link-active"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="cursor-pointer text-gray-primary text-sm hover:text-white-primary transition-colors duration-300"
+        class="nav-link cursor-pointer text-gray-primary text-sm hover:text-white-primary"
       >
         {{ link.label }}
       </a>
@@ -28,30 +28,16 @@
 </nav>
 
 <div class="flex sm:hidden h-16 items-center justify-end">
-  <button
-    aria-label="Open menu"
-    (click)="onToggleMobileMenu()"
-    class="p-2 cursor-pointer"
-  >
-    <lucide-angular
-      [name]="menuIcon"
-      class="w-5 h-5 text-gray-primary"
-    ></lucide-angular>
+  <button aria-label="Open menu" (click)="onToggleMobileMenu()" class="p-2 cursor-pointer">
+    <lucide-angular [name]="menuIcon" class="w-5 h-5 text-gray-primary"></lucide-angular>
   </button>
 </div>
 
 @if (isMobileMenuOpen()) {
   <div class="fixed inset-0 z-50 bg-black-primary flex flex-col px-6 py-4">
     <div class="flex items-center justify-end">
-      <button
-        aria-label="Close menu"
-        (click)="onCloseMobileMenu()"
-        class="p-2 cursor-pointer"
-      >
-        <lucide-angular
-          [name]="closeIcon"
-          class="w-5 h-5 text-gray-primary"
-        ></lucide-angular>
+      <button aria-label="Close menu" (click)="onCloseMobileMenu()" class="p-2 cursor-pointer">
+        <lucide-angular [name]="closeIcon" class="w-5 h-5 text-gray-primary"></lucide-angular>
       </button>
     </div>
 

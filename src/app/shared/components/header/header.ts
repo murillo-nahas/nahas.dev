@@ -6,6 +6,7 @@ import { LucideAngularModule, Menu, Moon, Sun, X } from 'lucide-angular';
   selector: 'app-header',
   imports: [LucideAngularModule, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
+  styleUrls: ['./header.css'],
 })
 export class Header {
   readonly sunIcon = Sun;
