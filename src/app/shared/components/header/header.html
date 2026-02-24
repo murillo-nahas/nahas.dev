@@ -2,7 +2,7 @@
   class="hidden sm:flex h-16 items-center justify-between text-white-primary"
   aria-label="Main navigation"
 >
-  <div class="flex items-center gap-8">
+  <div class="flex items-center justify-evenly w-full">
     @for (link of links; track link.href) {
       <a
         [routerLink]="link.href"
@@ -15,16 +15,7 @@
     }
   </div>
 
-  <button
-    aria-label="Toggle theme"
-    (click)="onToggleTheme()"
-    class="p-3 flex items-center justify-center cursor-pointer w-6 h-6 rounded-sm hover:bg-black-secondary transition-colors duration-300"
-  >
-    <lucide-angular
-      [name]="isLightTheme() ? moonIcon : sunIcon"
-      class="cursor-pointer w-4 h-4 text-gray-primary"
-    ></lucide-angular>
-  </button>
+
 </nav>
 
 <div class="flex sm:hidden h-16 items-center justify-end">
