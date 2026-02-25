@@ -39,14 +39,14 @@
         href="assets/resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2 text-gray-primary hover:text-white-primary text-sm"
+        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2 text-gray-primary hover:text-white-primary"
       >
         Access resume
       </a>
 
       <a
         href="mailto:murillonahas2003@gmail.com"
-        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2 text-gray-primary hover:text-white-primary text-sm"
+        class="hover:bg-black-secondary transition-colors duration-300 cursor-pointer rounded-lg p-2 text-gray-primary hover:text-white-primary"
       >
         Send me an email
       </a>
@@ -57,33 +57,33 @@
     <h2 class="text-white-primary text-2xl">Technologies</h2>
 
     <div class="mt-6 flex flex-col gap-2">
-      <h3 class="text-sm text-white-primary">Languages</h3>
-      <p class="text-gray-primary text-sm">TypeScript, JavaScript</p>
+      <h3 class="text-white-primary">Languages</h3>
+      <p class="text-gray-primary">TypeScript, JavaScript</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <h3 class="text-sm text-white-primary">Frontend</h3>
-      <p class="text-gray-primary text-sm">Angular, React.js, Next.js, Tailwind CSS</p>
+      <h3 class="text-white-primary">Frontend</h3>
+      <p class="text-gray-primary">Angular, React.js, Next.js, Tailwind CSS</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <h3 class="text-sm text-white-primary">Backend</h3>
-      <p class="text-gray-primary text-sm">Node.js, NestJS, Fastify, Express.js</p>
+      <h3 class="text-white-primary">Backend</h3>
+      <p class="text-gray-primary">Node.js, NestJS, Fastify, Express.js</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <h3 class="text-sm text-white-primary">Mobile</h3>
-      <p class="text-gray-primary text-sm">Ionic, React Native</p>
+      <h3 class="text-white-primary">Mobile</h3>
+      <p class="text-gray-primary">Ionic, React Native</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <h3 class="text-sm text-white-primary">Databases & ORMs</h3>
-      <p class="text-gray-primary text-sm">MySQL, PostgreSQL, MongoDB, Prisma, TypeORM</p>
+      <h3 class="text-white-primary">Databases & ORMs</h3>
+      <p class="text-gray-primary">MySQL, PostgreSQL, MongoDB, Prisma, TypeORM</p>
     </div>
 
     <div class="mt-6 flex flex-col gap-2">
-      <h3 class="text-sm text-white-primary">Infrastructure</h3>
-      <p class="text-gray-primary text-sm">Docker, AWS, Firebase, Vercel</p>
+      <h3 class="text-white-primary">Infrastructure</h3>
+      <p class="text-gray-primary">Docker, AWS, Firebase, Vercel</p>
     </div>
   </section>
 
@@ -91,7 +91,7 @@
     <h2 class="text-white-primary text-2xl">Reading List</h2>
 
     @for (book of readingList; track book.title; let first = $first) {
-      <p class="text-gray-primary text-sm" [class.mt-6]="first" [class.mt-4]="!first">
+      <p class="text-gray-primary" [class.mt-6]="first" [class.mt-4]="!first">
         {{ book.title }} — {{ book.author }}
         <span class="text-white-primary">({{ book.status }})</span>
       </p>
@@ -101,7 +101,7 @@
   <section class="mt-8 w-full pb-8 border-b border-solid border-black-secondary">
     <h2 class="text-white-primary text-2xl">What I Plan to Learn in 2026</h2>
 
-    <p class="mt-6 text-gray-primary text-sm">
+    <p class="mt-6 text-gray-primary">
       Software Architecture - System Design - Backend Engineering - Databases Engineering - AI -
       Product
     </p>

@@ -7,14 +7,14 @@
       class="text-white-primary underline hover:text-gray-primary transition-colors duration-300 cursor-pointer"
       >{{ name() }}</a
     >
-    <p class="text-sm text-gray-primary">{{ date() }}</p>
+    <p class="text-gray-primary">{{ date() }}</p>
   </div>
   <div class="mt-2">
-    <p class="text-gray-primary text-sm">{{ description() }}</p>
+    <p class="text-gray-primary">{{ description() }}</p>
   </div>
   <div class="mt-3 flex flex-wrap gap-2">
     @for (tech of techs(); track tech) {
-      <p class="text-gray-primary text-sm">{{ tech }}</p>
+      <p class="text-gray-primary">{{ tech }}</p>
     }
   </div>
   <div class="mt-3">
