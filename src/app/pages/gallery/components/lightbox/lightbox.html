@@ -22,6 +22,9 @@
     <img
       [src]="activePhoto().src"
       [alt]="activePhoto().alt"
+      width="400"
+      height="400"
+      loading="lazy"
       class="w-[400px] h-[400px] object-cover rounded-2xl transition-opacity duration-150"
       [class.opacity-0]="isTransitioning()"
       [class.opacity-100]="!isTransitioning()"
