@@ -13,8 +13,8 @@
         <span class="text-gray-primary text-sm">{{ album.year }}</span>
       </div>
 
-      <div class="mt-6 overflow-hidden">
-        <div class="flex gap-4 pb-2">
+      <div class="mt-6 overflow-x-auto pb-2">
+        <div class="flex gap-4">
           @for (photo of album.photos; track photo.src; let i = $index) {
             <div
               class="group relative shrink-0 w-[400px] h-[400px] cursor-pointer overflow-hidden rounded-2xl"

@@ -1,4 +1,4 @@
-import { Component, computed, input, output, signal } from '@angular/core';
+import { Component, HostListener, computed, input, output, signal } from '@angular/core';
 import { LucideAngularModule, ChevronLeft, ChevronRight, X } from 'lucide-angular';
 import { GalleryAlbum } from '../../../../shared/models/gallery.model';
 
@@ -24,6 +24,21 @@ export class Lightbox {
 
   ngOnInit(): void {
     this.currentIndex.set(this.initialIndex());
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  onKeydown(event: KeyboardEvent): void {
+    if (event.key === 'ArrowLeft') {
+      this.onPrev();
+    }
+
+    if (event.key === 'ArrowRight') {
+      this.onNext();
+    }
+
+    if (event.key === 'Escape') {
+      this.close.emit();
+    }
   }
 
   onPrev(): void {
