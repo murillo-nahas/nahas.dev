@@ -1,4 +1,51 @@
-<div class="w-full flex justify-center flex-col items-center">
-  <p class="text-white-primary text-2xl">Gallery</p>
-  <p class="mt-4 text-gray-primary text-sm">Coming soon</p>
+<div class="w-full">
+  @for (album of albums; track album.title; let last = $last) {
+    <section
+      class="w-full"
+      [class.pb-12]="!last"
+      [class.mb-12]="!last"
+      [class.border-b]="!last"
+      [class.border-black-secondary]="!last"
+      [class.border-solid]="!last"
+    >
+      <div class="flex items-baseline gap-3">
+        <h2 class="text-white-primary text-2xl">{{ album.title }}</h2>
+        <span class="text-gray-primary text-sm">{{ album.year }}</span>
+      </div>
+
+      <div class="mt-6 flex gap-4 overflow-x-auto pb-2">
+        @for (photo of album.photos; track photo.src; let i = $index) {
+          <div
+            class="group relative shrink-0 w-[400px] h-[400px] cursor-pointer overflow-hidden rounded-2xl"
+            (click)="onOpenPhoto(album, i)"
+          >
+            <img
+              [src]="photo.src"
+              [alt]="photo.alt"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-end p-5"
+            >
+              <p
+                class="text-white text-sm font-medium opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+              >
+                {{ album.title }}
+              </p>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+  }
 </div>
+
+@if (activeAlbum(); as album) {
+  <app-lightbox
+    [album]="album"
+    [photoIndex]="activePhotoIndex()"
+    (close)="onClosePhoto()"
+    (prev)="onPrevPhoto()"
+    (next)="onNextPhoto()"
+  />
+}

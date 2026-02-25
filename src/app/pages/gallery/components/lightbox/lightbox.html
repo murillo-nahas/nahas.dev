@@ -1,0 +1,40 @@
+<div
+  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center backdrop-blur-sm animate-in slide-in-from-bottom"
+  (click)="close.emit()"
+>
+  <button
+    aria-label="Close"
+    class="absolute top-4 right-4 p-2 text-white/60 hover:text-white transition-colors duration-200 cursor-pointer"
+    (click)="close.emit()"
+  >
+    <lucide-angular [name]="closeIcon" class="w-5 h-5"></lucide-angular>
+  </button>
+
+  <button
+    aria-label="Previous photo"
+    class="absolute left-4 p-2 text-white/60 hover:text-white transition-colors duration-200 cursor-pointer"
+    (click)="$event.stopPropagation(); prev.emit()"
+  >
+    <lucide-angular [name]="chevronLeftIcon" class="w-6 h-6"></lucide-angular>
+  </button>
+
+  <div class="flex flex-col items-center gap-3" (click)="$event.stopPropagation()">
+    <img
+      [src]="activePhoto().src"
+      [alt]="activePhoto().alt"
+      class="w-[400px] h-[400px] object-cover rounded-2xl"
+    />
+    <div class="flex items-center justify-between w-full px-1">
+      <p class="text-white/70 text-sm">{{ album().title }}, {{ album().year }}</p>
+      <p class="text-white/40 text-xs">{{ photoIndex() + 1 }} / {{ album().photos.length }}</p>
+    </div>
+  </div>
+
+  <button
+    aria-label="Next photo"
+    class="absolute right-4 p-2 text-white/60 hover:text-white transition-colors duration-200 cursor-pointer"
+    (click)="$event.stopPropagation(); next.emit()"
+  >
+    <lucide-angular [name]="chevronRightIcon" class="w-6 h-6"></lucide-angular>
+  </button>
+</div>
