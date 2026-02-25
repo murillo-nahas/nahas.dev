@@ -43,9 +43,7 @@
 @if (activeAlbum(); as album) {
   <app-lightbox
     [album]="album"
-    [photoIndex]="activePhotoIndex()"
+    [initialIndex]="initialIndex()"
     (close)="onClosePhoto()"
-    (prev)="onPrevPhoto()"
-    (next)="onNextPhoto()"
   />
 }

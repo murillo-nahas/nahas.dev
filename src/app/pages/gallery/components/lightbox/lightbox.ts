@@ -1,4 +1,4 @@
-import { Component, computed, input, output } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { LucideAngularModule, ChevronLeft, ChevronRight, X } from 'lucide-angular';
 import { GalleryAlbum } from '../../../../shared/models/gallery.model';
 
@@ -13,11 +13,38 @@ export class Lightbox {
   readonly closeIcon = X;
 
   readonly album = input.required<GalleryAlbum>();
-  readonly photoIndex = input.required<number>();
+  readonly initialIndex = input<number>(0);
 
   readonly close = output<void>();
-  readonly prev = output<void>();
-  readonly next = output<void>();
 
-  readonly activePhoto = computed(() => this.album().photos[this.photoIndex()]);
+  readonly currentIndex = signal(0);
+  readonly isTransitioning = signal(false);
+
+  readonly activePhoto = computed(() => this.album().photos[this.currentIndex()]);
+
+  ngOnInit(): void {
+    this.currentIndex.set(this.initialIndex());
+  }
+
+  onPrev(): void {
+    this.transition(() => {
+      const len = this.album().photos.length;
+      this.currentIndex.set((this.currentIndex() - 1 + len) % len);
+    });
+  }
+
+  onNext(): void {
+    this.transition(() => {
+      const len = this.album().photos.length;
+      this.currentIndex.set((this.currentIndex() + 1) % len);
+    });
+  }
+
+  private transition(changeFn: () => void): void {
+    this.isTransitioning.set(true);
+    setTimeout(() => {
+      changeFn();
+      this.isTransitioning.set(false);
+    }, 150);
+  }
 }
